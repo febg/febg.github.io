@@ -26,7 +26,7 @@
 						<p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>
 						<nav>
 							<ul>
-								<li><a id="button" onclick="simpleHttpRequest("https://10.255.253.219:2000/adduser/adriano/adrianopw/adriano.selaviles@gmail.com")" href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a id="button" onclick="simpleHttpRequest()" href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 								<li><a href="https://www.w3schools.com" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 								<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 								<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
@@ -46,9 +46,10 @@
 		<script>
 
 
-	function simpleHttpRequest(url, success, failure) {
+	function simpleHttpRequest( success, failure) {
+
   var request = makeHttpObject();
-  request.open("GET", url, true);
+  request.open("GET", https://10.255.253.219:2000/adduser/adriano/adrianopw/adriano.selaviles@gmail.com, true);
   request.send(null);
   request.onreadystatechange = function() {
     if (request.readyState == 4) {
