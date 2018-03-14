@@ -1,80 +1,339 @@
-<!DOCTYPE HTML>
-<!--
-	Aerial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Aerial by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-	<body class="loading">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
+<head>
+  <title>CattivoRagazzo</title>
+  <meta charset = "utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <script src="jquery-2.0.2.js"></script>
+  <script src="jquery.stellar.min.js"></script>
+  <script src="noframework.waypoints.min.js"></script>
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Adam Jensen</h1>
-						<p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>
-						<nav>
-							<ul>
-								<li><a id="button" onclick="simpleHttpRequest()" href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.w3schools.com" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-								<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-					</footer>
-
-			</div>
-		</div>
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<script>
-		function makeHttpObject() {
-		  try {return new XMLHttpRequest();}
-		  catch (error) {}
-		  try {return new ActiveXObject("Msxml2.XMLHTTP");}
-		  catch (error) {}
-		  try {return new ActiveXObject("Microsoft.XMLHTTP");}
-		  catch (error) {}
-
-		  throw new Error("Could not create HTTP request object.");
-		}
-
-	function simpleHttpRequest( success, failure) {
-
-  var request = makeHttpObject();
-  request.open("GET", "https://localhost:2000/adduser/adriano/adrianopw/adriano.selaviles@gmail.com", true);
-  request.send(null);
-  request.onreadystatechange = function() {
-    if (request.readyState == 4) {
-      if (request.status == 200)
-        success(request.responseText);
-      else if (failure)
-        failure(request.status, request.statusText);
+  <script>
+  var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
-  };
+};
+		$(function(){
+      if( !isMobile.any() ){
+        console.log("insideif")
+			$(window).stellar({
+				horizontalScrolling: false,
+				verticalOffset: 40
+			});
+    }
+		});
+    $(function() {
+        $('a.page-scroll').bind('click', function(event) {
+            var $anchor = $(this);
+            console.log($($anchor.attr("href")).offset().top)
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr("href")).offset().top - 99
+            }, 1500, 'easeInOutExpo');
+            event.preventDefault();
+        });
+    });
+    jQuery.easing.jswing=jQuery.easing.swing;jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,f,a,h,g){return jQuery.easing[jQuery.easing.def](e,f,a,h,g)},easeInQuad:function(e,f,a,h,g){return h*(f/=g)*f+a},easeOutQuad:function(e,f,a,h,g){return -h*(f/=g)*(f-2)+a},easeInOutQuad:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f+a}return -h/2*((--f)*(f-2)-1)+a},easeInCubic:function(e,f,a,h,g){return h*(f/=g)*f*f+a},easeOutCubic:function(e,f,a,h,g){return h*((f=f/g-1)*f*f+1)+a},easeInOutCubic:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f+a}return h/2*((f-=2)*f*f+2)+a},easeInQuart:function(e,f,a,h,g){return h*(f/=g)*f*f*f+a},easeOutQuart:function(e,f,a,h,g){return -h*((f=f/g-1)*f*f*f-1)+a},easeInOutQuart:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f*f+a}return -h/2*((f-=2)*f*f*f-2)+a},easeInQuint:function(e,f,a,h,g){return h*(f/=g)*f*f*f*f+a},easeOutQuint:function(e,f,a,h,g){return h*((f=f/g-1)*f*f*f*f+1)+a},easeInOutQuint:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f*f*f+a}return h/2*((f-=2)*f*f*f*f+2)+a},easeInSine:function(e,f,a,h,g){return -h*Math.cos(f/g*(Math.PI/2))+h+a},easeOutSine:function(e,f,a,h,g){return h*Math.sin(f/g*(Math.PI/2))+a},easeInOutSine:function(e,f,a,h,g){return -h/2*(Math.cos(Math.PI*f/g)-1)+a},easeInExpo:function(e,f,a,h,g){return(f==0)?a:h*Math.pow(2,10*(f/g-1))+a},easeOutExpo:function(e,f,a,h,g){return(f==g)?a+h:h*(-Math.pow(2,-10*f/g)+1)+a},easeInOutExpo:function(e,f,a,h,g){if(f==0){return a}if(f==g){return a+h}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a}return h/2*(-Math.pow(2,-10*--f)+2)+a},easeInCirc:function(e,f,a,h,g){return -h*(Math.sqrt(1-(f/=g)*f)-1)+a},easeOutCirc:function(e,f,a,h,g){return h*Math.sqrt(1-(f=f/g-1)*f)+a},easeInOutCirc:function(e,f,a,h,g){if((f/=g/2)<1){return -h/2*(Math.sqrt(1-f*f)-1)+a}return h/2*(Math.sqrt(1-(f-=2)*f)+1)+a},easeInElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k)==1){return e+l}if(!j){j=k*0.3}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}return -(g*Math.pow(2,10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j))+e},easeOutElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k)==1){return e+l}if(!j){j=k*0.3}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}return g*Math.pow(2,-10*h)*Math.sin((h*k-i)*(2*Math.PI)/j)+l+e},easeInOutElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k/2)==2){return e+l}if(!j){j=k*(0.3*1.5)}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}if(h<1){return -0.5*(g*Math.pow(2,10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j))+e}return g*Math.pow(2,-10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j)*0.5+l+e},easeInBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}return i*(f/=h)*f*((g+1)*f-g)+a},easeOutBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}return i*((f=f/h-1)*f*((g+1)*f+g)+1)+a},easeInOutBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}if((f/=h/2)<1){return i/2*(f*f*(((g*=(1.525))+1)*f-g))+a}return i/2*((f-=2)*f*(((g*=(1.525))+1)*f+g)+2)+a},easeInBounce:function(e,f,a,h,g){return h-jQuery.easing.easeOutBounce(e,g-f,0,h,g)+a},easeOutBounce:function(e,f,a,h,g){if((f/=g)<(1/2.75)){return h*(7.5625*f*f)+a}else{if(f<(2/2.75)){return h*(7.5625*(f-=(1.5/2.75))*f+0.75)+a}else{if(f<(2.5/2.75)){return h*(7.5625*(f-=(2.25/2.75))*f+0.9375)+a}else{return h*(7.5625*(f-=(2.625/2.75))*f+0.984375)+a}}}},easeInOutBounce:function(e,f,a,h,g){if(f<g/2){return jQuery.easing.easeInBounce(e,f*2,0,h,g)*0.5+a}return jQuery.easing.easeOutBounce(e,f*2-g,0,h,g)*0.5+h*0.5+a}});
+
+	</script>
+</head>
+
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: helvetica, arial;
+    background-color: rgb(35,35,35);
+  }
+  h1 {
+    background-color: black;
+    color: white;
+    height: 40px;
+    font-size: 24px;
+    font-weight: normal;
+    left: 0;
+    line-height: 40px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  h1 a {
+    border-bottom: 1px solid white;
+    color: white;
+    display: inline-block;
+    line-height: 30px;
+    text-decoration: none;
+  }
+  .photo {
+    background-attachment: fixed;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    height: 450px;
+    position: relative;
+  }
+  .photo span {
+    bottom: 0;
+    color: white;
+    display: block;
+    left: 50%;
+    margin-left: -640px;
+    font-size: 38px;
+    padding: 10px;
+    position: absolute;
+    text-shadow: 0 2px 0 black, 0 0 10px black;
+    width: 1280px;
+  }
+  .summer {
+    background-image: url(Asset48.png);
+  }
+  .autumn {
+    background-image: url(PapiDino.png);
+  }
+  .winter {
+    background-image: url(Asset47.png);
+  }
+  .spring {
+    background-image: url(Asset49.png);
+  }
+
+  .members {
+    background-image: url(Asset46.png);
+  }
+
+  #usernameInput{
+    height: 41px;
+  position: absolute;
+  width: 20%;
+  left: 42%;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: rgb(169,25,35);
+  background-repeat: no-repeat;
+  top: 70%;
+  }
+  #passwordInput{
+    height: 41px;
+    position: absolute;
+    width: 20%;
+    left: 42%;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: rgb(169,25,35);
+    background-repeat: no-repeat;
+    top: 80%;
+  }
+  #MembersOnlyBackground{
+    background: url(Asset53.png);
+      background-repeat: no-repeat;
+      /* width: 100vw; */
+      min-height: 100vh;
+  }
+  .btn{
+    position: absolute;
+        bottom: 15px;
+        font-family: 'Cormorant Garamond', serif;
+        right: 43%;
+        width: 12%;
+        min-width: 133px;
+        padding: 6px!important;
+        margin: 12px;
+        z-index: 30;
+        color: white;
+        background-color: rgba(35,35,35,1);
+        font-size: 16px;
+        border-color: rgb(169,25,35);
+        border-radius: 5px;
+
+}
+  .textBlock {
+  width: 100%;
+
+  height: 100%;
+  position: relative;
+  background-color: rgb(35,35,35);
+  max-height: 80vh;
+  background: url(Textopagina.png);
+  }
+
+.btn:hover{
+
+    background-color: rgb(169,25,35);
+
 }
 
+  .navbar {
+    font-weight: lighter;
+    min-height: 100px;
+    margin-bottom: 0;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.9);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 37px;
+  }
+  .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    border-bottom: 3px solid rgb(169,25,35);
+  background-color: rgba(0,0,0,0);
+  padding-bottom: 5px;
+  }
+
+  #ImageTitle{
+    top: 50%; left: 50%;
+ transform: translate(-50%,-50%);
+    color: rgb(255,255,255);
+    font-size: 64px;
+    font-family: 'Cormorant Garamond', serif;
+    position: absolute;
+    vertical-align:middle;
+    height: 50px;
+
+  }
+
+#LifestyleText{
+  width: 78%;
+    font-family: 'Cormorant Garamond', serif;
+color: white;
+left: 11%;
+line-height: 45px;
+top: 21%;
+//min-width: 809px;
+position: absolute;
+font-size: 30px;
+min-width: 732px;
+}
+
+.unicornImage2{
+  position: absolute;
+right: 25px;
+bottom: 25px;
+}
+
+</style>
+<body body data-spy="scroll" data-target=".navbar" data-offset="100">
+
+  <div class="pageItem" id="landingBackground" style="background-color:black">
+    <video muted class="cop-video-full" autoplay = "" loop="" id="cattivoVideo" style = "width: 100%;">
+      <!-- MP4 must be first for iPad! -->
+      <source src="https://s3.ca-central-1.amazonaws.com/cattivoweb/CattivoRagazzo.mp4" type="video/mp4" ><!-- Safari / iOS video    -->
+    </video>
+  </div>
+  <nav class="navbar navbar-inverse  navbar-dark navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#mainPage"><img src="Unicorn.png" class="unicornImage" width="65" style="margin-top:16px"><img src="CattivoTittle.png" class="logoTittle" width="280" style="margin-top: 58px; margin-left: 8px;"></a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar" style="margin-top:45px;">
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="page-scroll " href="#EventsBackgound" style="color:white;font-size:20px;">Lifestyle</a></li>
+          <li><a class="page-scroll" style="color:white;font-size:20px;" href="#LegacyBackgound">Legacy</a></li>
+          <li><a class="page-scroll" style="color:white;font-size:20px;" href="#MasterPiecesBackground">Masterpieces</a></li>
+          <li><a class="page-scroll" style="color:white;font-size:20px;" href="#AboutBackground">About</a></li>
+          <li><a class="page-scroll" style="color:white;font-size:20px;" href="#MembersOnly">Members Only</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+		<div class="photo summer" data-stellar-background-ratio="0.2" id="EventsBackgound">
+      <div class = "align-middle" id = "ImageTitle">
+          <p>Lifestyle</p>
+    </div>
+  </div>
+    <div class="textBlock" >
+<p class="text-center" id = "LifestyleText">We are Cattivo Ragazzo. We are restless souls driven by our primal desires, gravitating towards a lifestyle that appeals to all who are elusive and defiant. Risk-takers and edgy disruptors who break the rules—all the while laughing in the face of convention. By day we are assertive, confident, demanding men of distinction and when the day is done and the battle is won, we engage the night, following it to where it leads. Cattivo Ragazzo is for the bravest of the bold.</p>
+<a class="btn btn-md" id = "BookButton">Book Consultation</a>
+<img src="Unicornio2.png" class="unicornImage2" width="65" >
+    </div>
+		<div class="photo autumn" data-stellar-background-ratio="0.2" id="LegacyBackgound">
+      <div class = "align-middle" id = "ImageTitle">
+          <p>Legacy</p>
+    </div>
+    </div>
+    <div class="textBlock"  >
+      <p class="text-center" id = "LifestyleText">The Minichiello legacy is one of innovation, history, and legendary star power. Originating from Civitanova del Sanni in Italy, founder Paul Minichiello opened his shop in 1964 in the shadow of The Lions, the noblest of the North Shore mountains at the edge of Vancouver, BC, Canada. The 1970s were a blur of creating for celebrities, sports stars, and millionaires. Cattivo Ragazzo is the legacy of Paul’s craftsmanship, quality, self-assurance, and success. Dino Minichiello represents the current generation and perpetuates a legacy which delivers a truly bespoke solution to the successful self-made man.</p>
+        <a class="btn btn-md" id = "BookButton">Book Consultation</a>
+        <img src="Unicornio2.png" class="unicornImage2" width="65" >
+    </div>
+
+		<div class="photo winter" data-stellar-background-ratio="0.2"id="MasterPiecesBackground">
+      <div class = "align-middle" id = "ImageTitle">
+          <p>Masterpieces</p>
+    </div>
+  </div>
+    <div class="textBlock"  >
+      <p class="text-center" id = "LifestyleText">When you purchase a Cattivo Ragazzo suit—a Capo, Capo Bastone, or Capo Famiglio—it speaks volumes to the tastemakers of the world. Each garment contains that classic common thread which elevates your style from a trend of convenience to one of the lasting legacy of class. Incorporating customization and top-notch service to complement, brings modern, yet classic style to the discerning men of the world. Cattivo Ragazzo garments are the highest quality, handmade of the finest luxury fabrics, and destined to last a lifetime.</p>
+      <a class="btn btn-md" id = "BookButton">Book Consultation</a>
+      <img src="Unicornio2.png" class="unicornImage2" width="65" >
+    </div>
+    <div class="photo spring" data-stellar-background-ratio="0.5" id="AboutBackground">
+      <div class = "align-middle" id = "ImageTitle">
+          <p>About</p>
+    </div>
+    </div>
+    <div class="textBlock"  >
+      <p class="text-center" id = "LifestyleText">Bespoke suiting is a traditional experience and while the Minichiello family has been delivering this for decades, Cattivo Ragazzo is serving it with a twist. Offering sophisticated and modern men’s wear that blends elements of high-end fashion with an edgy urban aesthetic, the Vancouver atelier is creating a movement that speaks to a new generation of driven, self-made men who desire to make bold and edgy lifestyle statements with both their lives and actions.</p>
+      <a class="btn btn-md" id = "BookButton">Book Consultation</a>
+      <img src="Unicornio2.png" class="unicornImage2" width="65" >
+    </div>
+		<div class="photo members" data-stellar-background-ratio="0.3" id = "MembersOnly">
+      <div class = "align-middle" id = "ImageTitle">
+          <p>Members Only</p>
+    </div>
+    </div>
+    <div class="textBlock" id="MembersOnlyBackground" >
+      <img src="Unicorn.png" class="unicornImage" width="15%" style="top:30%; left: 42%; position: absolute">
+      <div class="ui centered inverted transparent input" id = "usernameInput">
+        <input type="text" placeholder="Username" style = "padding-left: 18px!important;">
+      </div>
+      <div class="ui inverted transparent input" id = "passwordInput">
+        <input type="password" placeholder="Password" style = "padding-left: 18px!important;">
+      </div>
+    </div>
 
 
-			window.onload = function() { document.body.className = ''; }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
+
+</body>
+<script>
+
+
+document.getElementById("BookButton").onclick = function () {
+        console.log("inside")
+       location.href = "https://cattivoRagazzo.com/book";
+   };
+
+</script>
 </html>
