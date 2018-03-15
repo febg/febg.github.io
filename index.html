@@ -48,6 +48,12 @@
 			});
     }
 		});
+
+      $(".nav li").on("click", function() {
+     $(".nav li").removeClass("active");
+     $(this).addClass("active");
+   });
+
     $(function() {
         $('a.page-scroll').bind('click', function(event) {
             var $anchor = $(this);
