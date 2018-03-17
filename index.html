@@ -195,29 +195,31 @@
       min-height: 100vh;
   }
   .btn{
-    position: absolute;
-        bottom: 15px;
-        font-family: 'Cormorant Garamond', serif;
-        right: 43%;
-        width: 12%;
-        min-width: 133px;
-        padding: 6px!important;
-        margin: 12px;
-        z-index: 30;
-        color: white;
-        background-color: rgba(35,35,35,1);
-        font-size: 16px;
-        border-color: rgb(169,25,35);
-        border-radius: 5px;
-
+    bottom: 15px;
+    font-family: 'Cormorant Garamond', serif;
+    right: 43%;
+    width: 12%;
+    min-width: 133px;
+    padding: 6px!important;
+    margin: 12px;
+    z-index: 30;
+    color: white;
+    background-color: rgba(35,35,35,1);
+    font-size: 16px;
+    border-color: rgb(169,25,35);
+    border-radius: 5px;
 }
   .textBlock {
-  width: 100%;
+    width: 100%;
+  /* height: 100%; */
 
-  height: 100%;
+  flex-direction: column;
   position: relative;
   background-color: rgb(35,35,35);
-  max-height: 80vh;
+  /* max-height: 80vh; */
+  align-items: center;
+  display: flex;
+  justify-content: center;
   background: url(Textopagina.png);
   }
 
@@ -259,10 +261,11 @@
     font-family: 'Cormorant Garamond', serif;
 color: white;
 left: 11%;
+margin-top: 50px!important;
 line-height: 45px;
 top: 21%;
 //min-width: 809px;
-position: absolute;
+
 font-size: 30px;
 min-width: 732px;
 }
