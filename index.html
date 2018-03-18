@@ -178,31 +178,24 @@
 
   #usernameInput{
     height: 41px;
-    /* position: absolute; */
     width: 50%;
-    /* left: 42%; */
     max-width: 250px;
     margin: 10px;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 10px;
     border-color: rgb(169, 25, 35);
-    /* background-repeat: no-repeat; */
-    /* top: 70%; */
   }
   #passwordInput{
     height: 41px;
-    /* position: absolute; */
     width: 50%;
     max-width: 250px;
-    /* left: 42%; */
     margin: 10px;
     border-radius: 10px;
-    border-width: 2px;
+    border-width: 1px;
     border-style: solid;
     border-color: rgb(169, 25, 35);
     background-repeat: no-repeat;
-    /* top: 80%; */
   }
   #MembersOnlyBackground{
     background: url(Asset53.png);
@@ -289,6 +282,12 @@ bottom: 25px;
 .unicornImage3{
 width: 150px;
     margin: 60px;
+}
+
+#LogInButton{
+  max-width: 140px;
+  border-radius: 12px;
+  width: 40%;
 }
 
 </style>
@@ -397,6 +396,7 @@ width: 150px;
       <div class="ui inverted transparent input" id = "passwordInput">
         <input type="password" placeholder="Password" style = "padding-left: 18px!important;">
       </div>
+      <a class="btn btn-md" id = "LogInButton">Login</a>
     </div>
 
 
