@@ -70,7 +70,7 @@
           var navbarToggle = $(".navbar-toggle");
           navbarToggle.css("margin-top", "30px");
           var button = $(".btn");
-          
+
           button.css("bottom", "unset");
           button.css("left","25%");
           button.css("width","160px");
@@ -78,7 +78,13 @@
           button.css("margin-top","32px");
 
     }
+
+    // $('.navbar-nav>li>a').on('click', function(){
+    //   $('.navbar-collapse').collapse('hide');
+    // });
 		});
+
+
 
     $(function() {
         $('a.page-scroll').bind('click', function(event) {
@@ -290,20 +296,37 @@ bottom: 25px;
       <div class="navbar-header">
         <a href="#mainPage"><img src="Unicorn.png" class="unicornImage" width="65" style="margin-top:16px">
           <img src="CattivoTitle.png" class="logoTittle" width="280" style="margin-top: 58px; margin-left: 8px;"></a>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
       </div>
-      <div class="collapse navbar-collapse" id="myNavbar" style="margin-top:45px;">
+      <div class="collapse navbar-collapse auto" id="myNavbar" style="margin-top:45px;">
         <ul class="nav navbar-nav pull-right">
-          <li><a class="page-scroll " href="#EventsBackgound" style="color:rgb(168,168,168);font-size:20px;">Lifestyle</a></li>
-          <li><a class="page-scroll" style="color:rgb(168,168,168);font-size:20px;" href="#LegacyBackgound">Legacy</a></li>
-          <li><a class="page-scroll" style="color:rgb(168,168,168);font-size:20px;" href="#MasterPiecesBackground">Masterpieces</a></li>
-          <li><a class="page-scroll" style="color:rgb(168,168,168);font-size:20px;" href="#AboutBackground">About</a></li>
-          <li><a class="page-scroll" style="color:rgb(168,168,168);font-size:20px;" href="#MembersOnly">Members Only</a></li>
+          <li class = "active">
+           <a class="hidden-xs page-scroll" href="#EventsBackgound" style="color:rgb(168,168,168);font-size:20px;">Lifestyle</a>
+           <a class="visible-xs page-scroll" data-toggle="collapse" data-target=".navbar-collapse" href="#EventsBackgound" style="color:rgb(168,168,168);font-size:20px;">Lifestyle</a>
+          </li>
+          <li>
+            <a class="hidden-xs page-scroll" style="color:rgb(168,168,168);font-size:20px;" href="#LegacyBackgound">Legacy</a>
+            <a class="visible-xs page-scroll" data-toggle="collapse" data-target=".navbar-collapse" style="color:rgb(168,168,168);font-size:20px;" href="#LegacyBackgound">Legacy</a>
+          </li>
+          <li>
+            <a class="hidden-xs page-scroll" style="color:rgb(168,168,168);font-size:20px;" href="#MasterPiecesBackground">Masterpieces</a>
+            <a class="visible-xs page-scroll" data-toggle="collapse" data-target=".navbar-collapse" style="color:rgb(168,168,168);font-size:20px;" href="#MasterPiecesBackground">Masterpieces</a>
+          </li>
+          <li>
+            <a class="hidden-xs page-scroll" style="color:rgb(168,168,168);font-size:20px;" href="#AboutBackground">About</a>
+            <a class="visible-xs page-scroll" data-toggle="collapse" data-target=".navbar-collapse" style="color:rgb(168,168,168);font-size:20px;" href="#AboutBackground">About</a>
+          </li>
+          <li>
+            <a class="hidden-xs page-scroll" style="color:rgb(168,168,168);font-size:20px;" href="#MembersOnly">Members Only</a>
+            <a class="visible-xs page-scroll" data-toggle="collapse" data-target=".navbar-collapse" style="color:rgb(168,168,168);font-size:20px;" href="#MembersOnly">Members Only</a>
+          </li>
         </ul>
       </div>
     </div>
