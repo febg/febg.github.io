@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="jquery-2.0.2.js"></script>
+</head>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form action="javascript:alert( 'success!' );">
+  Login:<br>
+  <input type="text" name="name">
+  <br>
+  Password:<br>
+  <input type="password" name="pass">
+  <br>
+  Email:<br>
+  <input type="text" name="email">
+  <br>
+  Cell:<br>
+  <input type="text" name="lastname">
+  <br><br>
+  <input type="submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+<script>
+$( "form" ).submit(function( event ) {
+	console.log("inside")
+	console.log($(this))
+	console.log($('[name="email"]'))
+	console.log($('[name="email"]').val())  
+if ( $('[name="email"]').val() !== "Bespoke4Life" ) {
+    $( "span" ).text( "Validated..." ).show();
+    return;
+  }
+ 
+  $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+  event.preventDefault();
+});
+</script>
+
+</body>
+</html>
