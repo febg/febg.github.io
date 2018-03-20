@@ -7,7 +7,7 @@ func GetRouter(c *Controller) *mux.Router {
 	router := mux.NewRouter()
 
 	//for a user to join a specific room
-	router.Methods("GET").Path("/email/{client_email}/").HandlerFunc(c.JoinRoomHandler)
+	router.Methods("GET").Path("/email/{client_email}/").HandlerFunc(c.SendEmail)
 
 	return router
 }

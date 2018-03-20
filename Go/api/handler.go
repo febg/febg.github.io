@@ -6,7 +6,7 @@ import ("github.com/gorilla/mux"
         "log")
 
 
-func (c *Controller) JoinRoomHandler(w http.ResponseWriter, r *http.Request) {
+func (c *Controller) SendEmail(w http.ResponseWriter, r *http.Request) {
 
 	v := mux.Vars(r)
 	client_email := v["client_email"]
