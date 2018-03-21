@@ -94,34 +94,6 @@
     // });
 		});
 
-function httpGetAsync(email, name, cell,pass, callback)
-{
-  if (pass != "Bespoke4Life"){
-      return false
-    }
-    if (email == "" || name == ""){
-      return "no fields"
-    }
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
-    }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-    xmlHttp.send(null);
-}
-
- $(function() {
-   
-  $.get(
-      "somepage.php",
-      {paramOne : 1, paramX : 'abc'},
-      function(data) {
-        alert('page content: ' + data);
-      }
-  );
-})
-
     $(function() {
         $('a.page-scroll').bind('click', function(event) {
             var $anchor = $(this);

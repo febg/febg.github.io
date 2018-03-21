@@ -2,43 +2,160 @@
 <html>
 <head>
   <script src="jquery-2.0.2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
 </head>
+
+<style>
+  .ui.message .list:not(.ui) li:before {
+    content: '->';
+  }
+</style>
 <body>
 
 <h2>HTML Forms</h2>
 
-<form action="javascript:alert( 'success!' );">
-  Login:<br>
-  <input type="text" name="name">
-  <br>
-  Password:<br>
-  <input type="password" name="pass">
-  <br>
-  Email:<br>
-  <input type="text" name="email">
-  <br>
-  Cell:<br>
-  <input type="text" name="lastname">
-  <br><br>
-  <input type="submit">
-</form> 
+<form class="ui form">
+    
+      <div class="field">
+        <label>Login</label>
+        <input name="login" type="text" >
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input name="password" type="password" >
+      </div>
+    
+    
+      <div class="field">
+        <label>Email</label>
+        <input name="email" type="email">
+      </div>
+      <div class="field">
+        <label>Cell</label>
+        <input name="different2" type="text">
+      </div>
+    
+    <div class="ui submit button">Submit</div>
+    <div class="ui error message"></div>
+  </form>
 
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
 
 <script>
-$( "form" ).submit(function( event ) {
-	console.log("inside")
-	console.log($(this))
-	console.log($('[name="email"]'))
-	console.log($('[name="email"]').val())  
-if ( $('[name="email"]').val() !== "Bespoke4Life" ) {
-    $( "span" ).text( "Validated..." ).show();
-    return;
+$('.ui.form')
+  .form({
+    on: 'blur',
+    fields: {
+      login: {
+        identifier  : 'login',
+        rules: [
+        {
+            type   : 'empty',
+            prompt : 'Please enter a value'
+          }
+        ]
+        
+      },
+      email: {
+        identifier  : 'email',
+        rules: [
+        {
+            type   : 'empty',
+            prompt : 'Please enter a value'
+          }
+        ]
+      },
+      password:{
+        identifier: 'password',
+        rules: [
+       
+          {
+            type   : 'isExactly[Bespoke4Life]',
+            prompt : 'Incorrect Password'
+          }
+          
+        ]
+      },
+    }
+  , onSuccess: function(event, fields) {
+       event.preventDefault();
+       console.log("before fields")
+        console.log(fields.email)
+        console.log("after fields")
+        
+
+        $.ajax({
+                url: "http://54.158.245.238/email/"+fields.email+"/",
+                type : "GET",
+                crossDomain:true,
+                crossOrigin:true,
+
+                error: function(xhr, status, errorThrown) {
+                    alert(status, errorThrown);
+                    // Error block
+                    console.log("xhr: " + xhr);
+                    console.log("status: " + status);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            })
+            .then(function(data, status, xhr) {
+                //alert(data);
+                console.log("xhr: " + xhr);
+                console.log("status: " + status);
+                console.log("data: "+ data);
+
+                $('.message').append(data);
+
+            });
   }
+  });
+
+
+
+
+
+
+// $( "form" ).submit(function( event ) {
+// 	console.log("inside") 
+//   if( $('.ui.form').form('is valid')) {
+
+//   console.log("validated form")
+// }else{
+//   console.log("error form")
+// }
+
  
-  $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
-  event.preventDefault();
-});
+
+// });
+
+function submitForm() {
+  console.log("on submit form")
+  $.ajax({
+                url: "http://54.158.245.238/email/"+"felipeballesteros1@gmail.com"+"/",
+                type : "GET",
+                crossDomain:true,
+                crossOrigin:true,
+
+                error: function(xhr, status, errorThrown) {
+                    alert(status, errorThrown);
+                    // Error block
+                    console.log("xhr: " + xhr);
+                    console.log("status: " + status);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            })
+            .then(function(data, status, xhr) {
+                //alert(data);
+                console.log("xhr: " + xhr);
+                console.log("status: " + status);
+                console.log("data: "+ data);
+
+                $('.message').append(data);
+
+            });
+      };
+
 </script>
 
 </body>

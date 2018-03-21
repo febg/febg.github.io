@@ -16,7 +16,7 @@ func main() {
     // Connect to the server, authenticate, set the sender and recipient,
     // and send the email all in one step.
     log.Println("[INFO] Listening on http://localhost:8081")
-    err = http.ListenAndServe(":8081", router)
+    err = http.ListenAndServe(":80", router)
     if err != nil {
       log.Fatal("ListenAndServe Error: ", err)
     }
