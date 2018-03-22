@@ -258,7 +258,7 @@
     margin: 25px;
     z-index: 30;
     color: white;
-    background-color: rgba(35,35,35,1);
+    background-color: rgba(35,35,35,0);
     font-size: 16px;
     border-color: rgb(169,25,35);
     border-radius: 5px;
@@ -374,8 +374,15 @@ width: 150px;
 #LogInButton{
   max-width: 140px;
   border-radius: 12px;
-  width: 40%;
+  width: 40%; 
 }
+#ImageTitle2{
+    color: rgb(255,255,255);
+    font-size: 32px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    
+  }
 
 </style>
 <body body data-spy="scroll" data-target=".navbar" data-offset="100">
@@ -512,13 +519,9 @@ width: 150px;
     </div>
     <div class="textBlock" id="MembersOnlyBackground" >
       <img src="Unicorn1.png" class="unicornImage3">
-      <div class="ui centered inverted transparent input" id = "usernameInput">
-        <input type="text" placeholder="Username" style = "padding-left: 18px!important;">
-      </div>
-      <div class="ui inverted transparent input" id = "passwordInput">
-        <input type="password" placeholder="Password" style = "padding-left: 18px!important;">
-      </div>
-      <a class="btn btn-md" id = "LogInButton">Login</a>
+      <div class = "align-middle" id = "ImageTitle2">
+          <p style="margin-bottom: 21px;">Cattivo Ragazzo VIP</p>
+          <a href="event.html" class="btn btn-md" id = "LogInButton">RSVP</a>
     </div>
 
 
