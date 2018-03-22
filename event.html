@@ -10,36 +10,108 @@
   .ui.message .list:not(.ui) li:before {
     content: '->';
   }
+  .CInput{
+    height: 41px!important;
+    width: 250px!important;
+    max-width: 250px!important;
+    margin: 10px!important;
+    border-style: solid!important;
+    border-width: 1px!important;
+    margin: 0px!important;
+    border-radius: 10px!important;
+    background-color: rgba(0,0,0,0)!important;
+    border-color: rgb(169, 25, 35)!important;
+    color: rgba(255,255,255)!important;
+  }
+
+  .hero-image {
+  background-image: url(MembersOnly.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  background-size: cover;
+  position: relative;
+  flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  
+}
+
+.unicornImage3{
+width: 150px;
+    margin: 8px;
+}
+
+.ui.form .field.field input:-webkit-autofill {
+  background-color: rgba(0,0,0,0)!important;
+  border-color: rgb(169, 25, 35)!important;
+}
+
+  #ImageTitle{
+    color: rgb(255,255,255);
+    font-size: 32px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    
+  }
+
+.ui.error.message {
+    background-color:  rgba(35,35,35,1)!important;
+    color: rgb(169,25,35)!important;
+    border-color: rgb(169,25,35)!important;
+}
+  .button{
+    bottom: 15px;
+    font-family: 'Cormorant Garamond'!important;
+    right: 43%;
+    width: 12%;
+    min-width: 133px;
+    padding: 6px!important;
+    margin: 25px;
+    z-index: 30;
+    border: solid!important;
+    color: white!important;
+    border-width: 1px!important;
+    background-color: rgba(35,35,35,1)!important;
+    font-size: 16px;
+    border-color: rgb(169,25,35)!important;
+    border-radius: 5px;
+  }
 </style>
 <body>
 
-<h2>HTML Forms</h2>
+    <div class="hero-image">
 
+<img src="Unicorn1.png" class="unicornImage3">
+<div class = "align-middle" id = "ImageTitle">
+    <p style="margin-bottom: 21px;">Cattivo Ragazzo VIP</p>
 <form class="ui form">
     
-      <div class="field">
-        <label>Login</label>
-        <input name="login" type="text" >
+      <div class="field" >
+     
+        <input class="CInput" placeholder="Name" name="login" type="text" autocomplete="off">
       </div>
       <div class="field">
-        <label>Password</label>
-        <input name="password" type="password" >
+
+        <input class="CInput" placeholder="Password" name="password" type="password" autocomplete="off">
       </div>
     
     
       <div class="field">
-        <label>Email</label>
-        <input name="email" type="email">
+
+        <input class="CInput" placeholder="Email" name="email" type="email" autocomplete="off">
       </div>
       <div class="field">
-        <label>Cell</label>
-        <input name="different2" type="text">
+    
+        <input class="CInput" placeholder="Mobile" name="cell" type="text" autocomplete="off">
       </div>
     
     <div class="ui submit button">Submit</div>
     <div class="ui error message"></div>
   </form>
-
+</div>
 
 
 <script>
@@ -52,7 +124,7 @@ $('.ui.form')
         rules: [
         {
             type   : 'empty',
-            prompt : 'Please enter a value'
+            prompt : 'Please enter a Name'
           }
         ]
         
@@ -62,7 +134,7 @@ $('.ui.form')
         rules: [
         {
             type   : 'empty',
-            prompt : 'Please enter a value'
+            prompt : 'Please enter a valid email'
           }
         ]
       },
