@@ -168,11 +168,14 @@ $('.ui.form')
        console.log("before fields")
         console.log(fields.email)
         console.log("after fields")
-        
+        console.log("http://54.158.245.238/email/"+fields.email+"/"+fields.login+"/"+fields.mobile?fileds.mobile:0+"/")  
 
         $.ajax({
-                url: "http://54.158.245.238/email/"+fields.email+"/",
+                url: "http://54.158.245.238/email/"+fields.email+"/"+fields.login+"/"+fields.mobile?fileds.mobile:0+"/",
                 type : "GET",
+                headers: {
+                   'Access-Control-Allow-Origin': '*'
+               },
                 crossDomain:true,
                 crossOrigin:true,
 
@@ -201,45 +204,6 @@ $('.ui.form')
 
 
 
-// $( "form" ).submit(function( event ) {
-// 	console.log("inside") 
-//   if( $('.ui.form').form('is valid')) {
-
-//   console.log("validated form")
-// }else{
-//   console.log("error form")
-// }
-
- 
-
-// });
-
-function submitForm() {
-  console.log("on submit form")
-  $.ajax({
-                url: "http://54.158.245.238/email/"+"felipeballesteros1@gmail.com"+"/",
-                type : "GET",
-                crossDomain:true,
-                crossOrigin:true,
-
-                error: function(xhr, status, errorThrown) {
-                   
-                    // Error block
-                    console.log("xhr: " + xhr);
-                    console.log("status: " + status);
-                    console.log("errorThrown: " + errorThrown);
-                }
-            })
-            .then(function(data, status, xhr) {
-                //alert(data);
-                console.log("xhr: " + xhr);
-                console.log("status: " + status);
-                console.log("data: "+ data);
-
-                $('.message').append(data);
-
-            });
-      };
 
       var isMobile = {
     Android: function() {
