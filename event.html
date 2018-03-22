@@ -21,7 +21,7 @@
     border-radius: 10px!important;
     background-color: rgba(0,0,0,0)!important;
     border-color: rgb(169, 25, 35)!important;
-    color: rgba(255,255,255)!important;
+    color: rgb(255,255,255)!important;
   }
 
   .hero-image {
@@ -105,7 +105,7 @@ width: 150px;
       </div>
       <div class="field">
     
-        <input class="CInput" placeholder="Mobile" name="cell" type="text" autocomplete="off">
+        <input class="CInput" placeholder="Mobile" name="mobile" type="text" autocomplete="off">
       </div>
     
     <div class="ui submit button">Submit</div>
@@ -133,7 +133,7 @@ $('.ui.form')
         identifier  : 'email',
         rules: [
         {
-            type   : 'empty',
+            type   : 'email',
             prompt : 'Please enter a valid email'
           }
         ]
@@ -149,6 +149,19 @@ $('.ui.form')
           
         ]
       },
+      mobile:{
+        identifier: 'mobile',
+        optional: true,
+        rules: [
+       
+          {
+            type   : 'number',
+            prompt : 'Mobile number should include numeric values only'
+          }
+          
+        ]
+      },
+
     }
   , onSuccess: function(event, fields) {
        event.preventDefault();
@@ -164,7 +177,7 @@ $('.ui.form')
                 crossOrigin:true,
 
                 error: function(xhr, status, errorThrown) {
-                    alert(status, errorThrown);
+                    
                     // Error block
                     console.log("xhr: " + xhr);
                     console.log("status: " + status);
@@ -227,6 +240,48 @@ function submitForm() {
 
             });
       };
+
+      var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+		$(function(){
+      if( !isMobile.any() ){
+        console.log("insideif")
+
+
+			$(window).stellar({
+				horizontalScrolling: false,
+				verticalOffset: 40
+			});
+    }
+    else{
+        var photo = $(".unicornImage3")
+        photo.css("width", "30%");
+        
+
+    }
+
+    // $('.navbar-nav>li>a').on('click', function(){
+    //   $('.navbar-collapse').collapse('hide');
+    // });
+		});
 
 </script>
 
