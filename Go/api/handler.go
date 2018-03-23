@@ -13,9 +13,9 @@ func (c *Controller) SendEmail(w http.ResponseWriter, r *http.Request) {
 
 	v := mux.Vars(r)
     client_email := v["client_email"]
-    client_name := v["client_name"]
-    client_number := v["client_number"]
-    password := v["password"]
+    // client_name := v["client_name"]
+    // client_number := v["client_number"]
+     password := v["password"]
     
     m := gomail.NewMessage()
     if (password == "Bespoke4Life"){
@@ -30,7 +30,7 @@ func (c *Controller) SendEmail(w http.ResponseWriter, r *http.Request) {
             If you have any questions regarding the event, Cattivo Ragazzo, or the Master Tailors,
             please do not hesitate to contact helen@cattivoragazzo.com
             
-           </body>`+client_name+client_number+password)
+           </body>`)
     }else{
         m.SetBody("text/html", `<body style ="text-align:center">Thank you for booking a consultation for our VIP Event celebrating bespoke suiting. <br /><br />
 
@@ -44,7 +44,7 @@ func (c *Controller) SendEmail(w http.ResponseWriter, r *http.Request) {
 Cattivo Ragazzo, or the Master Tailors,
 please do not hesitate to contact tania@cattivoragazzo.com.
             
-           </body>`+client_name+client_number+password) }
+           </body>`) }
    
     m.SetHeader("From", "Helen@cattivoragazzo.com")
     m.SetHeader("To", client_email)
