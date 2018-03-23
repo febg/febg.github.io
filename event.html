@@ -26,7 +26,7 @@
 
   .hero-image {
   background-image: url(MembersOnly.jpg);
-  height: 100%;
+  height: 92%;
   background-position: center;
   background-repeat: no-repeat;
   
@@ -39,9 +39,25 @@
   
 }
 
+ul {
+  list-style-type: none;
+}
+
+.container{
+  position: relative;
+  flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
 .unicornImage3{
 width: 150px;
     margin: 8px;
+}
+
+.main{
+  height: 100vh;
 }
 
 .ui.form .field.field input:-webkit-autofill {
@@ -56,6 +72,31 @@ width: 150px;
     font-family: 'Cormorant Garamond', serif;
     
   }
+
+  #BookButton{
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(35,35,35,1);
+    position: relative;
+}
+.btn{
+  bottom: 15px;
+    font-family: 'Cormorant Garamond', serif;
+    right: 43%;
+    width: 12%;
+    min-width: 133px;
+    padding: 6px!important;
+    margin: 10px;
+    border: solid;
+    text-align: center;
+    border-width: 1px;
+    z-index: 30;
+    color: white;
+    background-color: rgba(35,35,35,0);
+    font-size: 16px;
+    border-color: rgb(169,25,35);
+    border-radius: 5px;
+}
 
 .ui.error.message {
     background-color:  rgba(35,35,35,1)!important;
@@ -81,7 +122,7 @@ width: 150px;
   }
 </style>
 <body>
-
+<div class="main">
     <div class="hero-image">
 
 <img src="Unicorn1.png" class="unicornImage3">
@@ -114,6 +155,7 @@ width: 150px;
 </div>
 
 
+
 <script>
 $('.ui.form')
   .form({
@@ -124,7 +166,7 @@ $('.ui.form')
         rules: [
         {
             type   : 'empty',
-            prompt : 'Please enter a Name'
+            prompt : 'Please enter a name'
           }
         ]
         
@@ -144,7 +186,7 @@ $('.ui.form')
        
           {
             type   : 'isExactly[Bespoke4Life]',
-            prompt : 'Incorrect Password'
+            prompt : 'Incorrect password'
           }
           
         ]
@@ -247,6 +289,17 @@ $('.ui.form')
 		});
 
 </script>
+</div>
 
+  <div class="container" style = "background-color: black;height:8%">
+      
+     
+            <ul style="margin:0!important;  ">
+              <a style="color:white" href="https://www.cattivoragazzo.com/contact/"><li style="max-width: 110px;font-size: 18px;">Contact us</li></a>
+            </ul>
+      
+            <a class="btn btn-md" href="https://cattivoRagazzo.com/book" id="BookButton">Book Consultation</a>
+   </div>
+   </div>
 </body>
 </html>
