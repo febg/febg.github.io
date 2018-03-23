@@ -168,10 +168,12 @@ $('.ui.form')
        console.log("before fields")
         console.log(fields.email)
         console.log("after fields")
-        console.log("http://54.158.245.238/email/"+fields.email+"/"+fields.login+"/"+fields.mobile?fileds.mobile:0+"/")  
+        var mobile = fields.mobile?fields.mobile:"0"
+        console.log(mobile)
+        console.log("http://54.158.245.238/email/"+fields.email+"/"+fields.login+"/"+mobile+"/"+fields.password+"/")  
 
         $.ajax({
-                url: "http://54.158.245.238/email/"+fields.email+"/"+fields.login+"/"+fields.mobile?fileds.mobile:0+"/",
+                url: "http://54.158.245.238/email/"+fields.email+"/"+fields.login+"/"+fields.mobile?fields.mobile:0+"/",
                 type : "GET",
                 headers: {
                    'Access-Control-Allow-Origin': '*'
