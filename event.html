@@ -170,14 +170,11 @@ $('.ui.form')
         console.log("after fields")
         var mobile = fields.mobile?fields.mobile:"0"
         console.log(mobile)
-        console.log("http://54.158.245.238/email/"+fields.email+"/"+fields.login+"/"+mobile+"/"+fields.password+"/")  
+        console.log("standard-lb-408741064.us-west-2.elb.amazonaws.com/email/"+fields.email+"/"+fields.login+"/"+mobile+"/"+fields.password)  
 
         $.ajax({
-                url: "http://54.158.245.238/email/"+fields.email+"/"+fields.login+"/"+fields.mobile?fields.mobile:0+"/",
+                url: "http://standard-lb-408741064.us-west-2.elb.amazonaws.com/email/"+fields.email+"/"+fields.login+"/"+mobile+"/"+fields.password,
                 type : "GET",
-                headers: {
-                   'Access-Control-Allow-Origin': '*'
-               },
                 crossDomain:true,
                 crossOrigin:true,
 
