@@ -187,14 +187,11 @@ $('.ui.form')
       },
       password:{
         identifier: 'password',
-        // rules: [
-         
-        //   {
-        //     type   : 'isExactly[Bespoke4Life]'||'isExactly[Felipe]',
-        //     prompt : 'Incorrect password'
-        //   }
-          
-        // ]
+        rules: [
+        {
+            type   : 'empty',
+            prompt : 'Please enter a name'
+          }]
       },
       mobile:{
         identifier: 'mobile',
