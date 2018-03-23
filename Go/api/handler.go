@@ -18,24 +18,41 @@ func (c *Controller) SendEmail(w http.ResponseWriter, r *http.Request) {
     password := v["password"]
     
     m := gomail.NewMessage()
-    m.SetHeader("From", "felipe@cattivoragazzo.com")
+    if (password == "Bespoke4Life"){
+        m.SetBody("text/html", `<body style ="text-align:center">Thank you for RSVPing for our VIP Event celebrating bespoke suiting. <br /><br />
+
+            You have been added to the guest list and will receive
+            
+            a follow-up email with additional details in the days before
+            
+            revealing the location and libation selection.<br /><br/>
+            
+            If you have any questions regarding the event, Cattivo Ragazzo, or the Master Tailors,
+            please do not hesitate to contact helen@cattivoragazzo.com
+            
+           </body>`+client_name+client_number+password)
+    }else{
+        m.SetBody("text/html", `<body style ="text-align:center">Thank you for booking a consultation for our VIP Event celebrating bespoke suiting. <br /><br />
+
+            Dino Minichiello and the Cattivo Ragazzo team look forward to welcoming you 
+            
+            to our atelier for your personalized appointment 
+            
+            with Master Tailors Verolo & Lemmi.<br /><br/>
+            
+            If you have any questions in advance of setting your appointment,
+Cattivo Ragazzo, or the Master Tailors,
+please do not hesitate to contact tania@cattivoragazzo.com.
+            
+           </body>`+client_name+client_number+password) }
+   
+    m.SetHeader("From", "Helen@cattivoragazzo.com")
     m.SetHeader("To", client_email)
     m.SetHeader("Subject", "Hello!")
-    m.Embed("/Users/febg/Documents/CattivoRagazzoWeb/febg.github.io/Go/api/Legacy2.png")
-    m.SetBody("text/html", `Thank you `+ client_name+`! <br /><br />
-
-    Dino Minichiello and the team at Cattivo Ragazzo look forward to seeing you on April 5th, 2018, between 5pm-8pm for an outstanding event celebrating bespoke traditional and contemporary edge.<br /><br />
     
-    Further event details will be sent via the registered email. <br /><br />
-    
-    If you have any questions, please do not hesitate to contact event coordinator Helen Siwak at helen@cattivoragazzo.com. <br /><br />
-    
-    Ciao! <br /><br />
-    
-    *** <br /> <h2>Helen Siwak</h2> M: 778-847-3011<br />Studio: 608-36 Water St, Vancouver BC <br /><b>By Appointment Only</b><br /> W: www.cattivoragazzo.com <br /> <img src="cid:Legacy2.png" alt="My image" /> <br />`+client_name+client_number+password)
  
 
-    d := gomail.NewPlainDialer("smtp.gmail.com", 587, "felipe@cattivoragazzo.com", "1692Cattivo!")
+    d := gomail.NewPlainDialer("smtp.gmail.com", 587, "Helen@cattivoragazzo.com", "Victoria1122!!")
 
     // Send the email to Bob, Cora and Dan.
     if err := d.DialAndSend(m); err != nil {
