@@ -217,10 +217,10 @@ $('.ui.form')
         console.log("after fields")
         var mobile = fields.mobile?fields.mobile:"0"
         console.log(mobile)
-        console.log("standard-lb-408741064.us-west-2.elb.amazonaws.com/email/"+fields.email+"/"+fields.login+"/"+mobile+"/"+fields.password)  
+        console.log("https://acme.cattivoragazzo.ca/email/"+fields.email+"/"+fields.login+"/"+mobile+"/"+fields.password)  
 
         $.ajax({
-                url: "https://standard-lb-408741064.us-west-2.elb.amazonaws.com:443/email/"+fields.email+"/"+fields.login+"/"+mobile+"/"+fields.password,
+                url: "https://acme.cattivoragazzo.ca:443/email/"+fields.email+"/"+fields.login+"/"+mobile+"/"+fields.password,
                 type : "GET",
                 crossDomain:true,
                 crossOrigin:true,
