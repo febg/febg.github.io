@@ -231,6 +231,7 @@ $('.ui.form')
                     console.log("xhr: " + xhr);
                     console.log("status: " + status);
                     console.log("errorThrown: " + errorThrown);
+                    window.location.href = "https://cattivoragazzo.ca";
                 }
             })
             .then(function(data, status, xhr) {
@@ -238,7 +239,7 @@ $('.ui.form')
                 console.log("xhr: " + xhr);
                 console.log("status: " + status);
                 console.log("data: "+ data);
-
+                window.location.href = "https://cattivoragazzo.ca";
                 $('.message').append(data);
 
             });
