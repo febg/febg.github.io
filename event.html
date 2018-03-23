@@ -125,7 +125,7 @@ width: 150px;
     border-radius: 5px;
   }
 </style>
-<body>
+<body style="background-color: black;">
     <a class="btn btn-md" href="https://cattivoRagazzo.ca" style="position: absolute; top:20px;left: 20px; max-height: 33px;">Home</a>
 <div class="main">
     <div class="hero-image">
@@ -274,16 +274,12 @@ $('.ui.form')
 		$(function(){
       if( !isMobile.any() ){
         console.log("insideif")
-
-
-			$(window).stellar({
-				horizontalScrolling: false,
-				verticalOffset: 40
-			});
     }
     else{
         var photo = $(".unicornImage3")
         photo.css("width", "20%");
+        var button = $("#BookButton");
+        button.css("width", "40%")
         
 
     }
