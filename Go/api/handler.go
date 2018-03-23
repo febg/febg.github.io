@@ -48,7 +48,7 @@ please do not hesitate to contact tania@cattivoragazzo.com.
    
     m.SetHeader("From", "Helen@cattivoragazzo.com")
     m.SetHeader("To", client_email)
-    m.SetHeader("Subject", "Hello!")
+    m.SetHeader("Subject", "Confirmation of Cattivo Ragazzo VIP event RSVP")
     
  
 
