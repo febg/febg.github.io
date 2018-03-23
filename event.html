@@ -176,6 +176,14 @@ $('.ui.form')
         ]
         
       },
+      password:{
+        identifier: 'password',
+        rules: [
+        {
+            type   : 'empty',
+            prompt : 'Please enter a password'
+          }]
+      },
       email: {
         identifier  : 'email',
         rules: [
@@ -185,14 +193,7 @@ $('.ui.form')
           }
         ]
       },
-      password:{
-        identifier: 'password',
-        rules: [
-        {
-            type   : 'empty',
-            prompt : 'Please enter a password'
-          }]
-      },
+      
       mobile:{
         identifier: 'mobile',
         optional: true,
