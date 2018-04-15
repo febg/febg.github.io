@@ -3,6 +3,7 @@
 <head>
   <title>CattivoRagazzo</title>
   <meta charset = "utf-8">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
@@ -10,14 +11,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css">
+    <link href="owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
   <script src="jquery-2.0.2.js"></script>
   <script src="jquery.stellar.min.js"></script>
   <script src="noframework.waypoints.min.js"></script>
-
+  <script src="owlcarousel/owl.carousel.js"></script>
   <script>
   var isMobile = {
     Android: function() {
@@ -39,7 +42,13 @@
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
+
+  $(document).ready(function(){
+    console.log("Initiaiting")
+  $('.owl-carousel').owlCarousel({items: 1, singleItem: true, navigation: true, pagination: true});
+});
 		$(function(){
+    
       if( !isMobile.any() ){
         console.log("insideif")
 
@@ -290,6 +299,27 @@
   background: url(Textopagina-squashed.png);
   }
 
+  .textBlock2 {
+    flex-direction: column;
+    width: 100%;
+  /* height: 100%; */
+  min-height: 566px;
+  position: relative;
+  background-color: rgb(35,35,35);
+
+  /* max-height: 80vh; */
+  background: url(Textopagina-squashed.png);
+  }
+
+  .CapoWrapper {
+    align-items: center;
+  display: flex;
+  flex-direction: column;
+    width: 100%;
+    align-items: center;
+  justify-content: center;
+  }
+
 .btn:hover{
     background-color: rgb(169,25,35);
 }
@@ -393,8 +423,8 @@ ul {
 }
 
 .CapoBlock{
-
-  width: 30%;
+ 
+  width: 50%;
 }
 
 #LogInButton{
@@ -490,9 +520,11 @@ ul {
           <p>Masterpieces</p>
     </div>
   </div>
-    <div class="textBlock"  >
-      <div class="masterPiecesBlock">
-
+    <div class="textBlock2"  >
+  
+        <div class = "owl-carousel owl-theme">
+        
+        <div class = "CapoWrapper">
         <div class="CapoBlock" style="margin-top: 20px!important;">
           <p class="text-center MasterpiecesText capo1" id="CapoTitle" style="
           background-color: rgba(0,0,0,0.6);
@@ -503,7 +535,9 @@ ul {
           ">  Capo</p>
           <p class="text-center MasterpiecesText2">Enter the world of Cattivo Ragazzo with a choice of the first tier finery that begins with a pre-existing pattern. A beautiful selection of fabrics awaits your decision and creates the base to which to add your choice of Bemberg or Emerzine lining, printed with a range of themes. The Capo is hand-finished with hand-tucked lapels.</p>
         </div>
-        <div class="CapoBlock CapoFa" style="margin-top: 20px!important;">
+        </div>
+        <div class = "CapoWrapper">
+        <div class="CapoBlock" style="margin-top: 20px!important;">
           <p class="text-center MasterpiecesText capo1" id="CapoTitle"style="
           background-color: rgba(46,72,151,0.6);
           border: solid;
@@ -514,7 +548,9 @@ ul {
           ">  Capo Bastone</p>
           <p class="text-center MasterpiecesText2"> Chose the second tier of Cattivo Ragazzo finery which begins with a pre-existing pattern and encompasses all the stylish trim of the Capo with an expanded selection of speciality fabrics. Choose from a selection of limited edition Bemberg or Emerzine lining themes by established artists. Finished by hand and allowing additional manipulation to encompass a more personalized design and embellishment selection.</p>
         </div>
-        <div class="CapoBlock " style="margin-top: 20px!important;margin-bottom: 31px;">
+        </div>
+        <div class = "CapoWrapper">
+        <div class="CapoBlock" style="margin-top: 20px!important;margin-bottom: 31px;">
             <p class="text-center MasterpiecesText capo1" id="CapoTitle" style="
             background-color: rgba(87,73,153,0.6);
             border: solid;
@@ -525,8 +561,9 @@ ul {
             ">  Capo Famiglia</p>
             <p class="text-center MasterpiecesText2">Join the Cattivo Ragazzo family at the highest level with the finest suit imaginable made by hand by our Master Tailors in Italy. Enjoy the services of a personal stylist who will guide the process from concept to completion. Choose from the speciality fabrics of our extensive luxury collections and the exquisite custom designed silk-linings with unique themes by established artists. Explore the selection of VIP embellishments and then decide on which exclusive buttons to add.</p>
           </div>
-
-      </div>
+        </div>
+        </div>
+      
 
       <img src="Unicornio2.png" class="unicornImage2" width="85" style="left: 35px; bottom:40px">
   </div>
