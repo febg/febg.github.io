@@ -48,7 +48,7 @@
 
   $(document).ready(function(){
     console.log("Initiaiting")
-  $('.owl-carousel').owlCarousel({loop: true, items: 1, singleItem: true, nav: true, pagination: true, navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>']});
+  $('.owl-carousel').owlCarousel({autoplay:true, autoplayTimeout: 12500, loop: true, items: 1, singleItem: true, nav: true, pagination: true, navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>']});
 });
 		$(function(){
     
@@ -158,6 +158,10 @@
 .owl-theme .owl-controls .owl-page {
     display: inline-block;
 }
+.owl-carousel{
+  min-height: 566px;
+}
+
 .owl-theme .owl-controls .owl-page span {
     background: none repeat scroll 0 0 #869791;
     border-radius: 20px;
@@ -177,6 +181,32 @@
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     backface-visibility: hidden;
+}
+
+.masterPieceUl{
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: white;
+  width: 45%;
+  margin-left: 15px;
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 35px;
+
+  text-align: justify;
+font-size: 22px;
+}
+
+.mainMasterPieceUl{
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+
+.masterPierceLi{
+  margin-left: 10px;
+    list-style-type: circle;
 }
 
 .owl-dot {
@@ -237,7 +267,7 @@
     width: 15px;
     height: 100px;
     position: absolute;
-    font-size: 3em; 
+    font-size: 25px; 
     color: white;
     top: 40%;
     margin-left: 10%;
@@ -250,7 +280,7 @@
     height: 100px;
     position: absolute;
     top: 40%;
-    font-size: 3em; 
+    font-size: 25px; 
     color: white;
     right: 10%;
     display: block!IMPORTANT;
@@ -453,7 +483,7 @@ line-height: 35px;
 top: 21%;
 //min-width: 809px;
 text-align: justify;
-font-size: 27px;
+font-size: 22px;
 //min-width: 732px;
 }
 
@@ -491,7 +521,7 @@ ul {
 
 .CapoBlock{
  
-  width: 50%;
+  width: 65%;
 }
 
 #LogInButton{
@@ -567,7 +597,8 @@ ul {
 <p class="text-center LifestyleText">We are Cattivo Ragazzo. We are restless souls driven by our primal desires,
   gravitating towards a lifestyle that appeals to all who are elusive and defiant. Risk-takers and edgy disruptors who break the rules—all the while laughing in the face of convention.
    By day we are assertive, confident, demanding men of distinction and when the day is done and the battle is won, we engage the night, following it to where it leads.
-   Cattivo Ragazzo is for the bravest of the bold.</p>
+   Cattivo Ragazzo is for the bravest of the bold.
+  </p>
 
 <img src="Unicornio2.png" class="unicornImage2" width="85" style="left: 35px; top:40px">
     </div>
@@ -600,7 +631,29 @@ ul {
           border-color:  rgba(255,255,255,0.8);
           color: rgba(255,255,255,0.8);
           ">  Capo</p>
-          <p class="text-center MasterpiecesText2">Enter the world of Cattivo Ragazzo with a choice of the first tier finery that begins with a pre-existing pattern. A beautiful selection of fabrics awaits your decision and creates the base to which to add your choice of Bemberg or Emerzine lining, printed with a range of themes. The Capo is hand-finished with hand-tucked lapels.</p>
+          <p class="text-center MasterpiecesText2">Enter the world of Cattivo Ragazzo with a choice of the first tier finery that 
+            begins with a pre-existing pattern. A beautiful selection of fabrics awaits your decision and creates the base to which to add your choice of Bemberg 
+            or Emerzine lining, printed with a range of themes. The Capo is hand-finished with hand-tucked lapels.
+            <ul class = "mainMasterPieceUl">
+            <ul class = "masterPieceUl">
+              <li class="masterPierceLi">
+                  Made: 80% machine/20% hand: Made-to-measure suit
+              </li>
+              <li class="masterPierceLi">
+                  Finished: By hand: button-holes, pick stitching, hand-felled collars
+              </li>
+            </ul>
+            <ul class = "masterPieceUl" style = "margin-left: 50px;">
+               <li class="masterPierceLi">
+                  Internal Construction: machine stitched (horse-hair canvas)
+              </li>
+            
+            <li class="masterPierceLi">
+                Mills: Selection of European mills offered, creative printed Emerzine & Bemberg lining options
+            </li>
+          </ul>
+        </ul>
+          </p>
         </div>
         </div>
         <div class = "CapoWrapper">
