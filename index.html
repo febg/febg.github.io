@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117762070-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117762070-1');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5ZJRBVK');</script>
+    <!-- End Google Tag Manager -->
   <title>CattivoRagazzo</title>
   <meta charset = "utf-8">
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css">
-    <link href="owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css">
+  <link href="owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -45,57 +58,46 @@
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
-
   $(document).ready(function(){
     console.log("Initiaiting")
   $('.owl-carousel').owlCarousel({autoplay:true, autoplayTimeout: 12500, loop: true, items: 1, singleItem: true, nav: true, pagination: true, navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>']});
 });
 		$(function(){
-    
       if( !isMobile.any() ){
         console.log("insideif")
-
-
 			$(window).stellar({
 				horizontalScrolling: false,
 				verticalOffset: 40
 			});
     }
     else{
+       
         var photo = $(".photo")
         photo.css("background-attachment","unset");
         photo.css("width","100%");
         photo.css("height", "30%");
         photo.css("background-size", "100%");
         photo.css("text-align", "center");
-          var LifestyleText = $(".LifestyleText");
-          LifestyleText.css("min-width","unset");
-          LifestyleText.css("margin", "0");
-          LifestyleText.css("margin-bottom", "35px");
-          LifestyleText.css("max-heigth", "unset");
-          LifestyleText.css("padding-top","0px");
-          LifestyleText.css("text-align", "justify");
-          LifestyleText.css("font-size", "20px");
-          LifestyleText.css("line-height", "25px");
-          LifestyleText.css("text-jutify", "distribute");
-          LifestyleText.css("word-wrap", "break-word");
-          var textBlock = $(".textBlock");
-          textBlock.css("height","auto");
-          textBlock.css("max-height","unset");
-          textBlock.css("min-height", "unset");
-
-          var LogoTittle = $(".logoTittle");
-          LogoTittle.css("width","50%");
-          var navbarToggle = $(".navbar-toggle");
-          navbarToggle.css("margin-top", "30px");
-          // var button = $(".btn");
-
-          // button.css("bottom", "unset");
-          // button.css("left","25%");
-          // button.css("width","160px");
-          // button.css("right","unset");
-          // button.css("margin-top","32px");
-          var masterPiecesBlock = $(".masterPiecesBlock")
+        var LifestyleText = $(".LifestyleText");
+        LifestyleText.css("min-width","unset");
+        LifestyleText.css("margin", "0");
+        LifestyleText.css("margin-bottom", "35px");
+        LifestyleText.css("max-heigth", "unset");
+        LifestyleText.css("padding-top","0px");
+        LifestyleText.css("text-align", "justify");
+        LifestyleText.css("font-size", "20px");
+        LifestyleText.css("line-height", "25px");
+        LifestyleText.css("text-jutify", "distribute");
+        LifestyleText.css("word-wrap", "break-word");
+        var textBlock = $(".textBlock");
+        textBlock.css("height","auto");
+        textBlock.css("max-height","unset");
+        textBlock.css("min-height", "unset");
+        var LogoTittle = $(".logoTittle");
+        LogoTittle.css("width","50%");
+        var navbarToggle = $(".navbar-toggle");
+        navbarToggle.css("margin-top", "30px");
+        var masterPiecesBlock = $(".masterPiecesBlock")
           masterPiecesBlock.css("flex-direction","column")
           var masterPiecesText2 = $(".MasterpiecesText2")
           masterPiecesText2.css("width", "78%")
@@ -106,7 +108,8 @@
           masterPiecesText2.css("line-height", "25px");
           masterPiecesText2.css("text-jutify", "distribute");
           masterPiecesText2.css("word-wrap", "break-word");
-          masterPiecesText2.css("margin-top", "0px")
+          masterPiecesText2.css("margin-top", "0px");
+          masterPiecesText2.removeClass("mainMasterPieceUl");
           var CapoBlock = $(".CapoBlock");
           CapoBlock.css("width", "100%");
           CapoBlock.css("align-items", "center");
@@ -123,14 +126,7 @@
           MembersOnlyBackground.css("background-size", "unset");
           var LogInButton = $('.LogInButton');
           LogInButton.css('margin-bottom', '80px');
-          // var footerul = $(".footerul");
-          // footerul.addClass( "btn" );
-
     }
-
-    // $('.navbar-nav>li>a').on('click', function(){
-    //   $('.navbar-collapse').collapse('hide');
-    // });
 		});
 
     $(function() {
@@ -161,7 +157,14 @@
 .owl-carousel{
   min-height: 566px;
 }
+.footerul{
+  display: flex;
+   /* flex-direction: row; */
+   justify-content: space-between;
+  width: 100%;
+   /* align-items: flex-start; */
 
+}
 .owl-theme .owl-controls .owl-page span {
     background: none repeat scroll 0 0 #869791;
     border-radius: 20px;
@@ -196,13 +199,25 @@
 font-size: 22px;
 }
 
+.fa-instagram{
+  font-size: 18px;
+  color: white
+}
+
 .mainMasterPieceUl{
   flex-direction: row;
   display: flex;
   flex-wrap: wrap;
-
 }
 
+.fa-copyright{
+  font-size: 15px;
+}
+
+.fa-facebook-square{
+  font-size: 18px;
+    color: white;
+}
 
 .masterPierceLi{
   margin-left: 10px;
@@ -364,23 +379,27 @@ font-size: 22px;
     font-family: 'Cormorant Garamond', serif;
     right: 43%;
     width: 12%;
-
-    min-width: 133px;
+    min-width: 165px;
+    min-height: 33px;
     padding: 6px!important;
     margin: 25px;
     z-index: 30;
+    line-height: 19px;
     color: white;
     background-color: rgba(35,35,35,0);
-    font-size: 16px;
+    font-size: 20px;
     border-color: rgb(169,25,35);
     border-radius: 5px;
 }
 #BookButton{
-    right: 5px;
+    margin: 0px auto; /* Will not center vertically and won't work in IE6/7. */
+    left: 0;
+    right: 0;
     bottom: 0px;
-    background-color: rgba(35,35,35,1);
+    background-color: rgba(169,25,35,1);
+    border-color: rgb(35,35,35);
+
     position: fixed;
-    margin: 10px!important
 }
   .textBlock {
     width: 100%;
@@ -473,7 +492,7 @@ font-size: 22px;
 
   }
 
-    .MasterpiecesText2{
+.MasterpiecesText2{
 
 font-family: 'Cormorant Garamond', serif;
 color: white;
@@ -481,10 +500,10 @@ left: 11%;
 margin-top: 50px!important;
 line-height: 35px;
 top: 21%;
-//min-width: 809px;
+
 text-align: justify;
 font-size: 22px;
-//min-width: 732px;
+
 }
 
 .unicornImage2{
@@ -511,7 +530,7 @@ ul {
 
 .container2{
   position: relative;
-  flex-direction: row;
+  flex-direction: column;
     align-items: center;
     display: flex;
     font-family: 'Cormorant Garamond', serif;
@@ -539,6 +558,10 @@ ul {
 
 </style>
 <body body data-spy="scroll" data-target=".navbar" data-offset="100">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZJRBVK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <a class="btn btn-md" href="https://cattivoRagazzo.com/book" id="BookButton">Book Consultation</a>
   <div class="pageItem" id="landingBackground" style="background-color:black">
     <video muted class="cop-video-full" autoplay loop playsinline id="cattivoVideo" style = "width: 100%;margin-top: 100px;">
@@ -666,7 +689,28 @@ ul {
           color: rgba(153,153,153,0.8);
 
           ">  Capo Bastone</p>
-          <p class="text-center MasterpiecesText2"> Chose the second tier of Cattivo Ragazzo finery which begins with a pre-existing pattern and encompasses all the stylish trim of the Capo with an expanded selection of speciality fabrics. Choose from a selection of limited edition Bemberg or Emerzine lining themes by established artists. Finished by hand and allowing additional manipulation to encompass a more personalized design and embellishment selection.</p>
+          <p class="text-center MasterpiecesText2">Choose the second tier of Cattivo Ragazzo finery which begins with a pre-existing pattern
+             and encompasses all the stylish trim of the Capo with an expanded selection of specialty fabrics. Choose from a selection of limited edition
+              Bemberg or Emerzine lining themes by established artists. Finished by hand and allowing additional manipulation to encompass a more personalized design
+               and embellishment selection.
+            <ul class = "mainMasterPieceUl">
+            <ul class = "masterPieceUl">
+              <li class="masterPierceLi">
+                  Made: 50% machine/50% hand: Custom suit 
+              </li>
+              <li class="masterPierceLi">
+                  Details: Hand sewn details over-and-above the Capo offering              </li>
+                  <li class="masterPierceLi">
+                      Internal Construction: semi-hand-tucked lapels (horse-hair canvas)   </li>    
+                </ul>
+            <ul class = "masterPieceUl" style = "margin-left: 50px;">
+               <li class="masterPierceLi">
+                  Pattern: Adjusted exclusively for the individual              </li>
+            <li class="masterPierceLi">
+                Mills: A library of European mills offered, limited edition Emerzine & Bemberg lining options            </li>
+          </ul>
+        </ul>
+          </p>
         </div>
         </div>
         <div class = "CapoWrapper">
@@ -679,8 +723,29 @@ ul {
             color: rgba(207,168,55,0.8);
 
             ">  Capo Famiglia</p>
-            <p class="text-center MasterpiecesText2">Join the Cattivo Ragazzo family at the highest level with the finest suit imaginable made by hand by our Master Tailors in Italy. Enjoy the services of a personal stylist who will guide the process from concept to completion. Choose from the speciality fabrics of our extensive luxury collections and the exquisite custom designed silk-linings with unique themes by established artists. Explore the selection of VIP embellishments and then decide on which exclusive buttons to add.</p>
-          </div>
+            <p class="text-center MasterpiecesText2">Join the Cattivo Ragazzo family at the highest level with the finest suit imaginable made by hand by our Master Tailors in Italy. Enjoy the services of a personal stylist who will guide the process from concept to completion. Choose from the specialty fabrics of our extensive luxury collections and the exquisite custom designed silk-linings with unique themes by established artists. Explore the selection of VIP embellishments and then decide on which exclusive buttons to add.
+               <ul class = "mainMasterPieceUl">
+               <ul class = "masterPieceUl">
+                 <li class="masterPierceLi">
+                    Made: 100% hand/0% machine
+                  </li>
+                 <li class="masterPierceLi">
+                    Mills: A library of luxury European mills, on-of-a-kind linings by established artists
+                     </li>
+                     <li class="masterPierceLi">
+                        Internal Construction: No limit bespoke experience </li>
+                      </ul>
+               <ul class = "masterPieceUl" style = "margin-left: 50px;">
+                  <li class="masterPierceLi">
+                      Fitting: a minimum of two fitting with Italian tailor directly from Italy </li>
+                   <li class="masterPierceLi">
+                      Pattern: 100% bespoke tailored to the individual </li>
+                      <li class="masterPierceLi">
+                      Extra: Personal stylist works hand-in-hand with individual to ensure perfection </li>
+
+                    </ul>
+           </ul>
+             </p>          </div>
         </div>
         </div>
       
@@ -713,7 +778,12 @@ ul {
 
 
   <ul class="footerul"style="margin:15px!important;  ">
-    <a style="color:white" href="https://www.cattivoragazzo.com/contact/"><li style="max-width: 110px;font-size: 18px;">| Contact Us |</li></a>
+    <div style="display:flex; flex-direction: row; margin-left: 10px; margin-right: 10px"><a style="color:white" href="https://www.cattivoragazzo.com/contact/"><li style="max-width: 110px;font-size: 18px;">| Contact Us |</li></a>
+    <div style="display:flex; flex-direction: row; margin-left: 10px; margin-right: 10px"><i class="far fa-copyright" style="color:white"></i> <p style="color:white; margin-left: 0px"> Minichiello Apparel Inc.</p></div></div>
+    <div style="display:flex; flex-direction: row; margin-left: 10px; margin-right: 20px"><a style="color:white; margin-left: 10px; margin-right: 10px" href="https://www.facebook.com/CattivoRagazzoVIP/"><i class="fab fa-facebook-square"></i></a>
+    <a style="color:white; margin-left: 10px; margin-right: 10px" href="https://www.instagram.com/cattivoragazzovip/"><i class="fab fa-instagram"></i></a>
+  </div>
+
   </ul>
 
 </div>
