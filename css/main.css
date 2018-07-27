@@ -4453,6 +4453,7 @@ dl.accordion.time-line:before {
 .single-footer-widget .footer-social a i {
   vertical-align: bottom;
   color: #fff;
+  font-size: 22px;
 }
 
 .single-footer-widget .footer-social a:hover i {
