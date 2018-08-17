@@ -1,0 +1,37 @@
+.header-social {
+    margin: 0px;}
+    .header-social a {
+        font-size: 36px;
+        /* margin-left: 14px; */
+        margin-top: 25px;
+        margin-right: 17px;
+        color: black;
+    }
+
+#my-description {
+    top: 25px;
+}
+
+.home-about-me-title {
+    text-align: center;}
+    .home-about-me-title p {
+        font-size: 15px;
+        width: 60%;
+        margin: auto;
+        margin-top: 35px;
+        margin-bottom: 35px;}
+        .home-about-me-title a {
+
+        }
+
+.home-about-me-desc {
+    text-align: center;}
+    .home-about-me-desc p {
+        font-size: 15px;
+        width: 60%;
+        margin: auto;
+        margin-top: 55px;
+        margin-bottom: 55px;}
+    .home-about-me-desc a {
+
+    }
